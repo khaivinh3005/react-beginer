@@ -2,8 +2,7 @@
 //cd : vô thư mục con
 //cd .. : quay ra thư mục cha
 //npm run start: khởi start
-//package.json :
+//package.json : nơi chứa lệnh chạy source và version của những thư viện
+//node modules : Kho lưu trữ toàn bộ src các thư viện mới tải xuống
 
-//tailwinds: Thự viện UI
-//boostrap: thư viện UI
-//Material: thư viện UI
+//.gitignore: loại bỏ những file or folder không cần thiết or dung lượng quá lớn lên github
