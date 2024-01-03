@@ -6,3 +6,13 @@
 //node modules : Kho lưu trữ toàn bộ src các thư viện mới tải xuống
 
 //.gitignore: loại bỏ những file or folder không cần thiết or dung lượng quá lớn lên github
+
+//folow chính:
+
+1. HTMl có div có id: Root
+2. ở file index.js : DOM tới id root và render ra giao diện từ file từ file App
+
+//src
+.index.js
+.app.js
+.app.css

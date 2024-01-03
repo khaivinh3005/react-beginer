@@ -1,13 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import './Components/styles.css';
 import reportWebVitals from './reportWebVitals';
+import HeaderComponent from './Components/HeaderComponent';
+import SectionComponent from './Components/SectionComponent';
 
+// Dom tới id là root ở html
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
-    <App />
+    <HeaderComponent />
+    <SectionComponent />
   </React.StrictMode>
 );
 
