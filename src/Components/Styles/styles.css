@@ -1,0 +1,67 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Start Header */
+header {
+  padding: 10px;
+  background-color: #f8e1db;
+}
+
+header ul {
+  margin-top: 10px;
+}
+
+header ul li {
+  display: inline-block;
+  margin-right: 40px;
+}
+
+/* End Header */
+
+/* Start Carousel */
+.carousel {
+  background-image: url('../Image/BG.png');
+  height: 800px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* End Carousel */
+
+/* Start Activities */
+.card-group {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.card-group .card-item {
+  padding: 20px 40px;
+  border: 1px solid gainsboro;
+  border-radius: 12px;
+  width: 25%;
+}
+
+.card-group .card-item .card-item-image {
+  background-image: url('../Image/product1.png');
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+}
+
+.card-group .card-item .card-item-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* End Activities */

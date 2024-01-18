@@ -9,10 +9,24 @@
 
 //folow chính:
 
-1. HTMl có div có id: Root
-2. ở file index.js : DOM tới id root và render ra giao diện từ file từ file App
+//React :
+\_Framework :
+\_Library : Thư viện là Boostrap , Antd
+
+1.file HTML
 
 //src
 .index.js
 .app.js
 .app.css
+
+SPA: SINGLE PAGE APPLICATION
++(DUY NHất 1 trang html)
++Load lần đầu tiên: SPA (Tốn time nhiều hơn)
+
+MPA: Multip page application
++(Nhiều hơn 1 trang html (2,3,5,...12 HTML))
++Load lần đầu tiên: MPA (THời gian nhanh hơn)
+
+state => chỉ những giá trị cần thay đổi thì bỏ vào state
+=> ko thay đổi giá trị thì khai báo biến bt

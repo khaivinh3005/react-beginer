@@ -1,18 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import './Components/styles.css';
 import reportWebVitals from './reportWebVitals';
-import HeaderComponent from './Components/HeaderComponent';
-import SectionComponent from './Components/SectionComponent';
+import './Components/Styles/styles.css';
+import CampingProject from './Components/Camping/CampingProject';
+import FashionProject from './Components/Fashion/FashionProject';
+import StateComponent from './Components/StateLyThuyet/StateComponent';
+import StateComponentExample2 from './Components/StateLyThuyet/StateComponentExample2';
 
 // Dom tới id là root ở html
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    <HeaderComponent />
-    <SectionComponent />
+    {/* Camping project */}
+    {/* <CampingProject /> */}
+    {/* <FashionProject /> */}
+    {/* <StateComponent /> */}
+    <StateComponentExample2 />
   </React.StrictMode>
 );
 
