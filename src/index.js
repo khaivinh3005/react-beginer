@@ -7,6 +7,8 @@ import CampingProject from './Components/Camping/CampingProject';
 import FashionProject from './Components/Fashion/FashionProject';
 import StateComponent from './Components/StateLyThuyet/StateComponent';
 import StateComponentExample2 from './Components/StateLyThuyet/StateComponentExample2';
+import StateComponentExample3 from './Components/StateLyThuyet/StateComponentExample3';
+import StateComponentExample4 from './Components/StateLyThuyet/StateComponentExample4';
 
 // Dom tới id là root ở html
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -17,7 +19,9 @@ root.render(
     {/* <CampingProject /> */}
     {/* <FashionProject /> */}
     {/* <StateComponent /> */}
-    <StateComponentExample2 />
+    {/* <StateComponentExample2 /> */}
+    {/* <StateComponentExample3 /> */}
+    <StateComponentExample4 />
   </React.StrictMode>
 );
 
