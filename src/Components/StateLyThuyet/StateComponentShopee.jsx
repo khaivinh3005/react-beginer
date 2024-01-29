@@ -22,8 +22,6 @@ const StateComponentShopee = () => {
   const [count, setCount] = useState(0);
   const [discount, setDiscount] = useState(0);
 
-  const notify = () => toast.error('Bạn vui lòng chọn số lượng');
-
   //Hàm chuyển đổi tiền VNĐ
   const handleConvertMoneyVND = (money) => {
     const result = money.toLocaleString('it-IT', {
@@ -49,6 +47,18 @@ const StateComponentShopee = () => {
   };
 
   const money = 74000 * count - discount;
+
+  const notify = () => {
+    if (money > 0) {
+      toast.success(
+        `Bạn đã mua đơn hàng thành công với số tiền ${handleConvertMoneyVND(
+          money
+        )}`
+      );
+    } else {
+      toast.error('Bạn vui lòng chọn số lượng');
+    }
+  };
 
   return (
     <div className='d-flex'>
