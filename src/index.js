@@ -12,6 +12,7 @@ import StateComponentExample4 from './Components/StateLyThuyet/StateComponentExa
 import StateComponentShopee from './Components/StateLyThuyet/StateComponentShopee';
 import ExampleProps from './Components/PropsLyThuyet/ExampleProps';
 import { ChakraProvider } from '@chakra-ui/react';
+import CarProject from './Components/CarProject/CarProject';
 // Dom tới id là root ở html
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -26,7 +27,8 @@ root.render(
       {/* <StateComponentExample3 /> */}
       {/* <StateComponentExample4 /> */}
       {/* <StateComponentShopee /> */}
-      <ExampleProps />
+      {/* <ExampleProps /> */}
+      <CarProject />
     </ChakraProvider>
   </React.StrictMode>
 );

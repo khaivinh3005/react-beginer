@@ -30,3 +30,8 @@ MPA: Multip page application
 
 state => chỉ những giá trị cần thay đổi thì bỏ vào state
 => ko thay đổi giá trị thì khai báo biến bt
+
+Chức năng search
+=> Yêu cầu search tên xe là ra tên xe , chỉ hiện ra xe mình muốn.
+
+Phân tích:
