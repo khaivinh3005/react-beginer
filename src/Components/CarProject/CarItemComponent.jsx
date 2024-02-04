@@ -11,14 +11,37 @@ import {
   IconButton,
   Image,
   Text,
+  useToast,
 } from '@chakra-ui/react';
+import HeaderCarComponent from './HeaderCarComponent';
 
 const CarItemComponent = (props) => {
   const { item, listCar, setListCar } = props;
+  const toast = useToast();
 
+  const showToast = (title, status) => {
+    toast({
+      title: title,
+      status: status,
+      duration: 9000,
+      isClosable: true,
+      position: 'top-right',
+    });
+  };
+
+  //C2
   const handleChangeLike = (listCar, itemCar) => {
-    console.log('listCar: ', listCar);
-    console.log('itemCar : ', itemCar);
+    const newListCar = [...listCar];
+    const index = newListCar.findIndex((car) => car.id === itemCar.id);
+    if (index !== -1) {
+      newListCar[index] = {
+        ...newListCar[index],
+        isLike: !newListCar[index].isLike,
+      };
+
+      showToast('Sản phẩm đã được yêu thích', 'success');
+    }
+    setListCar(newListCar);
   };
 
   return (
@@ -52,7 +75,7 @@ const CarItemComponent = (props) => {
           flexWrap='wrap'
           sx={{
             '& > button': {
-              minW: '136px',
+              minW: '50px',
             },
           }}
         >
@@ -64,9 +87,7 @@ const CarItemComponent = (props) => {
           >
             Like
           </Button>
-          <Button flex='1' variant='ghost' leftIcon={<AddIcon />}>
-            Comment
-          </Button>
+          <Button flex='1' variant='ghost' leftIcon={<AddIcon />}></Button>
         </CardFooter>
       </Card>
     </>

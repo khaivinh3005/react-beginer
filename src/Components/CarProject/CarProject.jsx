@@ -5,6 +5,7 @@ import carLexus from '../Image/car-lexus.jpeg';
 
 import { Box, Button, Flex, Input, InputGroup } from '@chakra-ui/react';
 import CarItemComponent from './CarItemComponent';
+import HeaderCarComponent from './HeaderCarComponent';
 
 // 1. UI
 // 2. Viết hàm
@@ -28,6 +29,7 @@ const listCarDefault = [
     imageCar: carBenz,
     price: '1000',
     isLike: false,
+    isCount: 0,
   },
   {
     id: 2,
@@ -35,6 +37,7 @@ const listCarDefault = [
     imageCar: carBMW,
     price: '3000',
     isLike: false,
+    isCount: 0,
   },
   {
     id: 3,
@@ -42,13 +45,13 @@ const listCarDefault = [
     imageCar: carLexus,
     price: '1500',
     isLike: false,
+    isCount: 0,
   },
 ];
 
 const CarProject = () => {
   const [listCar, setListCar] = useState(listCarDefault);
   const [inputNameCar, setInputNameCar] = useState('');
-
   const handleChangeInput = (value) => {
     const newInput = value.toLowerCase().replace(/\s/g, '');
     setInputNameCar(newInput);
@@ -72,22 +75,15 @@ const CarProject = () => {
 
   return (
     <>
-      <InputGroup size='sm'>
-        <Input
-          placeholder='Nhập tên xe cần tìm'
-          onChange={(e) => handleChangeInput(e.target.value)}
-          onKeyUp={() => {
-            if (inputNameCar) {
-              handleSearchCar(listCar, inputNameCar);
-            } else {
-              setListCar(listCarDefault);
-            }
-          }}
-        />
-        <Button onClick={() => handleSearchCar(listCar, inputNameCar)}>
-          Search
-        </Button>
-      </InputGroup>
+      <HeaderCarComponent
+        inputNameCar={inputNameCar}
+        handleChangeInput={handleChangeInput}
+        handleSearchCar={handleSearchCar}
+        listCarDefault={listCarDefault}
+        listCar={listCar}
+        setListCar={setListCar}
+      />
+
       <Flex gap={'10px'}>
         {/* card item */}
         {listCar.map((item, index) => {
