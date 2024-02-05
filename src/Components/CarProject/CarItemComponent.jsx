@@ -13,7 +13,6 @@ import {
   Text,
   useToast,
 } from '@chakra-ui/react';
-import HeaderCarComponent from './HeaderCarComponent';
 
 const CarItemComponent = (props) => {
   const { item, listCar, setListCar } = props;
@@ -40,6 +39,21 @@ const CarItemComponent = (props) => {
       };
 
       showToast('Sản phẩm đã được yêu thích', 'success');
+    }
+    setListCar(newListCar);
+  };
+
+  const handleAddToCart = (listCar, itemCar) => {
+    const newListCar = [...listCar];
+    const index = newListCar.findIndex((car) => car.id === itemCar.id);
+    if (index !== -1 && !newListCar[index].isBuy) {
+      newListCar[index] = {
+        ...newListCar[index],
+        isBuy: true,
+      };
+      showToast('Sản phẩm đã được thêm vào giỏ hàng', 'success');
+    } else {
+      showToast('Sản phẩm đã có trong giỏ hàng', 'warning');
     }
     setListCar(newListCar);
   };
@@ -87,7 +101,12 @@ const CarItemComponent = (props) => {
           >
             Like
           </Button>
-          <Button flex='1' variant='ghost' leftIcon={<AddIcon />}></Button>
+          <Button
+            flex='1'
+            variant='ghost'
+            onClick={() => handleAddToCart(listCar, item)}
+            leftIcon={<AddIcon />}
+          ></Button>
         </CardFooter>
       </Card>
     </>

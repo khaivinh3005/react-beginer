@@ -29,7 +29,7 @@ const listCarDefault = [
     imageCar: carBenz,
     price: '1000',
     isLike: false,
-    isCount: 0,
+    isBuy: false,
   },
   {
     id: 2,
@@ -37,7 +37,7 @@ const listCarDefault = [
     imageCar: carBMW,
     price: '3000',
     isLike: false,
-    isCount: 0,
+    isBuy: false,
   },
   {
     id: 3,
@@ -45,13 +45,16 @@ const listCarDefault = [
     imageCar: carLexus,
     price: '1500',
     isLike: false,
-    isCount: 0,
+    isBuy: false,
   },
 ];
 
 const CarProject = () => {
   const [listCar, setListCar] = useState(listCarDefault);
   const [inputNameCar, setInputNameCar] = useState('');
+
+  console.log('listCar : ', listCar);
+
   const handleChangeInput = (value) => {
     const newInput = value.toLowerCase().replace(/\s/g, '');
     setInputNameCar(newInput);
