@@ -32,29 +32,45 @@ const CarItemComponent = (props) => {
   const handleChangeLike = (listCar, itemCar) => {
     const newListCar = [...listCar];
     const index = newListCar.findIndex((car) => car.id === itemCar.id);
-    if (index !== -1) {
+    if (index !== -1 && !newListCar[index].isLike) {
       newListCar[index] = {
         ...newListCar[index],
-        isLike: !newListCar[index].isLike,
+        isLike: true,
       };
-
       showToast('Sản phẩm đã được yêu thích', 'success');
+    } else {
+      showToast('Sản phẩm đã có trong mục yêu thích', 'warning');
     }
     setListCar(newListCar);
   };
 
   const handleAddToCart = (listCar, itemCar) => {
-    const newListCar = [...listCar];
-    const index = newListCar.findIndex((car) => car.id === itemCar.id);
-    if (index !== -1 && !newListCar[index].isBuy) {
-      newListCar[index] = {
-        ...newListCar[index],
-        isBuy: true,
-      };
-      showToast('Sản phẩm đã được thêm vào giỏ hàng', 'success');
-    } else {
-      showToast('Sản phẩm đã có trong giỏ hàng', 'warning');
-    }
+    // c2
+    // const newListCar = [...listCar];
+    // const index = newListCar.findIndex((car) => car.id === itemCar.id);
+    // if (index !== -1 && !newListCar[index].isBuy) {
+    //   newListCar[index] = {
+    //     ...newListCar[index],
+    //     isBuy: true,
+    //   };
+    //   showToast('Sản phẩm đã được thêm vào giỏ hàng', 'success');
+    // } else {
+    //   showToast('Sản phẩm đã có trong giỏ hàng', 'warning');
+    // }
+    // setListCar(newListCar);
+
+    // c1
+    const newListCar = listCar.map((oldCar) => {
+      if (oldCar.id === itemCar.id && !oldCar.isBuy) {
+        let newUpdateOldCar = { ...oldCar, isBuy: true, count: 1 };
+        showToast('Sản phẩm đã được thêm vào giỏ hàng', 'success');
+        return newUpdateOldCar;
+      } else if (oldCar.id === itemCar.id && oldCar.isBuy) {
+        showToast('Sản phẩm đã có trong giỏ hàng', 'warning');
+      }
+      //index 2,3
+      return oldCar;
+    });
     setListCar(newListCar);
   };
 

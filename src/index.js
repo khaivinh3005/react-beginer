@@ -13,24 +13,20 @@ import StateComponentShopee from './Components/StateLyThuyet/StateComponentShope
 import ExampleProps from './Components/PropsLyThuyet/ExampleProps';
 import { ChakraProvider } from '@chakra-ui/react';
 import CarProject from './Components/CarProject/CarProject';
+import WarningComponent from './Components/Warning/WarningComponent';
+import ShowUI from './Components/Warning/WarningComponent';
+import ComponentClass from './Components/UseEffect/ClassComponent';
+import FunctionComponent from './Components/Example/FunctionComponent';
+import ClassComponent from './Components/Example/ClassComponent';
 // Dom tới id là root ở html
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-  <React.StrictMode>
-    <ChakraProvider>
-      {/* Camping project */}
-      {/* <CampingProject /> */}
-      {/* <FashionProject /> */}
-      {/* <StateComponent /> */}
-      {/* <StateComponentExample2 /> */}
-      {/* <StateComponentExample3 /> */}
-      {/* <StateComponentExample4 /> */}
-      {/* <StateComponentShopee /> */}
-      {/* <ExampleProps /> */}
-      <CarProject />
-    </ChakraProvider>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <ChakraProvider>
+    <FunctionComponent />
+  </ChakraProvider>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

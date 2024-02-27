@@ -7,8 +7,10 @@ import {
   Input,
   InputGroup,
   Text,
+  useDisclosure,
 } from '@chakra-ui/react';
 import React from 'react';
+import ModalComponentCar from './ModalComponentCar';
 
 const HeaderCarComponent = (props) => {
   const {
@@ -20,8 +22,15 @@ const HeaderCarComponent = (props) => {
     listCarDefault,
   } = props;
 
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   const sumLike = listCar.reduce(
     (total, item) => (total += item.isLike ? 1 : 0),
+    0
+  );
+
+  const sumBuy = listCar.reduce(
+    (total, item) => (total += item.isBuy ? 1 : 0),
     0
   );
 
@@ -48,15 +57,23 @@ const HeaderCarComponent = (props) => {
         </Button>
       </InputGroup>
       <Flex className='header-cart' gap={5}>
-        <Flex alignItems={'center'}>
+        <Flex alignItems={'center'} onClick={onOpen} cursor={'pointer'}>
           <i className='fa fa-shopping-cart'></i>
-          <Text fontSize='sm'>0</Text>
+          <Text fontSize='sm'>{sumBuy ? sumBuy : ''}</Text>
         </Flex>
         <Flex alignItems={'center'}>
           <i className='fa fa-heart'></i>
           <Text fontSize='sm'>{sumLike ? sumLike : ''}</Text>
         </Flex>
       </Flex>
+
+      <ModalComponentCar
+        listCar={listCar}
+        onClose={onClose}
+        isOpen={isOpen}
+        onOpen={onOpen}
+        setListCar={setListCar}
+      />
     </Flex>
   );
 };

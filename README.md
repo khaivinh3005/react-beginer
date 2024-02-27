@@ -34,4 +34,14 @@ state => chỉ những giá trị cần thay đổi thì bỏ vào state
 Chức năng search
 => Yêu cầu search tên xe là ra tên xe , chỉ hiện ra xe mình muốn.
 
-Phân tích:
+// Tham số thứ 1, tham số 2
+// Tham số thứ 2: dependency
+useEffect(() => {
+
+}, []);
+//call 1 lần duy nhất khi mới load trang, sau đó khi thay setState thì nó ko vô hàm useEffect ni nữa vì dependency là []
+
+/\*\*
+
+- khi mà setState => cập nhật lại state => component re-render => re-UI
+  \*/
