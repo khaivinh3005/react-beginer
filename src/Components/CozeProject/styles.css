@@ -1,0 +1,9 @@
+.CozeSideBarComponent {
+  box-shadow: 1px 0 1px 0 rgba(56, 55, 67, 0.08);
+}
+
+.CozeListComponent .cozeItem {
+  border-radius: 6px;
+  height: 36px;
+  width: 36px;
+}

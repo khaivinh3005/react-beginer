@@ -18,13 +18,15 @@ import ShowUI from './Components/Warning/WarningComponent';
 import ComponentClass from './Components/UseEffect/ClassComponent';
 import FunctionComponent from './Components/Example/FunctionComponent';
 import ClassComponent from './Components/Example/ClassComponent';
+import UseEffectExample from './Components/Example/UseEffectExample';
+import CozeComponent from './Components/CozeProject/CozeComponent';
 // Dom tới id là root ở html
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   // <React.StrictMode>
   <ChakraProvider>
-    <FunctionComponent />
+    <CozeComponent />
   </ChakraProvider>
   // </React.StrictMode>
 );
