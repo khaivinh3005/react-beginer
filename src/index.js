@@ -24,11 +24,11 @@ import CozeComponent from './Components/CozeProject/CozeComponent';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-  // <React.StrictMode>
-  <ChakraProvider>
-    <CozeComponent />
-  </ChakraProvider>
-  // </React.StrictMode>
+  <React.StrictMode>
+    <ChakraProvider>
+      <CozeComponent />
+    </ChakraProvider>
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

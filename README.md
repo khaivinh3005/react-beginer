@@ -35,11 +35,11 @@ Chức năng search
 => Yêu cầu search tên xe là ra tên xe , chỉ hiện ra xe mình muốn.
 
 // Tham số thứ 1, tham số 2
-// Tham số thứ 2: dependency
+// Tham số thứ 2: dependency => componentdidupdate
 useEffect(() => {
 
 }, []);
-//call 1 lần duy nhất khi mới load trang, sau đó khi thay setState thì nó ko vô hàm useEffect ni nữa vì dependency là []
+//call 1 lần duy nhất khi mới load trang, sau đó khi thay setState thì nó ko vô hàm useEffect ni nữa vì dependency là [] => componentdidmount
 
 /\*\*
 
