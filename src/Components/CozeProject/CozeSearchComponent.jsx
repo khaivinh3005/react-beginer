@@ -2,26 +2,30 @@ import { Box, Button, Flex, Input } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 
 const CozeSearchComponent = (props) => {
-  const { listData, setListData, setValue } = props;
+  const { listData, setListData } = props;
 
   const handleChangeSort = (value) => {
+    const newListData = [...listData];
     if (value === '1') {
-      const newListData = listData.sort((a, b) => {
+      newListData.sort((a, b) => {
         const textA = a.name.toUpperCase();
         const textB = b.name.toUpperCase();
         return textA < textB ? -1 : textA > textB ? 1 : 0;
       });
-      setListData(newListData);
-      setValue(value);
     } else {
-      const newListData = listData.sort((a, b) => {
+      newListData.sort((a, b) => {
         const textA = a.name.toUpperCase();
         const textB = b.name.toUpperCase();
         return textA > textB ? -1 : textA < textB ? 1 : 0;
       });
-      setListData(newListData);
-      setValue(value);
     }
+    setListData(newListData);
+  };
+
+  const handleSearch = (value) => {
+    let newListData = [...listData];
+    newListData = newListData.filter((e) => e.name.includes(value));
+    setListData(newListData);
   };
 
   return (
@@ -44,7 +48,11 @@ const CozeSearchComponent = (props) => {
 
         {/* Search */}
         <Flex gap={2}>
-          <Input borderColor={'blue'} type='text' />
+          <Input
+            borderColor={'blue'}
+            type='text'
+            onChange={(e) => handleSearch(e.target.value)}
+          />
           <Button>Submit</Button>
         </Flex>
       </Flex>

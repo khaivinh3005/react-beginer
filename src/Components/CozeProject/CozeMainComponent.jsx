@@ -13,11 +13,10 @@ const CozeMainComponent = () => {
   const [listData, setListData] = useState([]);
   const [tab, setTab] = useState(null);
   const [listDefault, setListDefault] = useState([]);
-  const [value, setValue] = useState(null);
 
   useEffect(() => {
     if (tab === 2) {
-      const newListData = listData.filter((item) =>
+      const newListData = listDefault.filter((item) =>
         item.category.includes('Photo')
       );
       console.log('newListData: ', newListData);
@@ -45,12 +44,7 @@ const CozeMainComponent = () => {
 
   return (
     <Box bg={'#F7F7FA'} w={'85%'} pl={'18px'}>
-      <CozeSearchComponent
-        listData={listData}
-        setListData={setListData}
-        value={value}
-        setValue={setValue}
-      />
+      <CozeSearchComponent listData={listDefault} setListData={setListData} />
       <CozeTabsComponent />
       <CozeListComponent setTab={setTab} listData={listData} />
     </Box>
